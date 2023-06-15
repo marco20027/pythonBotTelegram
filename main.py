@@ -1,9 +1,13 @@
+from pkg_resources import UnknownExtra
 import telebot
 import json
 from tabulate import tabulate
 from texttable import Texttable
+import requests
+import re
 API_TOKEN = '6154235977:AAFt5Tt39HgUgko6rJTkPNMEUsvCcPxMMyI'
-
+bot_parse = telebot.TeleBot(API_TOKEN, parse_mode='html')
+photo_list = []
 bot = telebot.TeleBot(API_TOKEN)
 
 classifica = open("classifica.json")
@@ -36,7 +40,13 @@ def statsSerieA(link):
 
 @bot.message_handler(commands=['acmilan'])
 def acmilan(text):
-    bot.reply_to(text, "La squadra migliore interista di merda !")
+    bot.reply_to(text, "La squadra migliore, interista di merda !")
 
+"""@bot.send_message(chat_id=165507928,text="test")
+def send_message(text):
+    return text"""
+
+
+    # calls the main function if namespace is main
 
 bot.polling()
