@@ -40,13 +40,9 @@ def statsSerieA(link):
 
 @bot.message_handler(commands=['acmilan'])
 def acmilan(text):
-    bot.reply_to(text, "La squadra migliore, interista di merda !")
-
-"""@bot.send_message(chat_id=165507928,text="test")
-def send_message(text):
-    return text"""
+    bot.reply_to(text, "La squadra migliore")
 
 
-    # calls the main function if namespace is main
+
 
 bot.polling()
